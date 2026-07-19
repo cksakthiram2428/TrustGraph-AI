@@ -97,29 +97,29 @@ MSME HACKATHON/
 ---
 
 ## 📸 Screenshots
-
+![Home Page](images/img1.png)
 ### Login Page
-![Login Page](screenshots/login.png)
+![Login Page](images/img2.png)
 *3D animated login page with translucent particle background*
 
 ### Dashboard - Trust Score Cards
-![Trust Scores](screenshots/dashboard-cards.png)
+![Trust Scores](images/img3.png)
 *Animated supplier trust score cards with glassmorphism effects*
 
 ### Dashboard - Network Graph
-![Network Graph](screenshots/network-graph.png)
+![Network Graph](images/img5.png)
 *Interactive D3-powered supply chain network visualization*
 
 ### Dashboard - Risk Distribution
-![Risk Distribution](screenshots/risk-distribution.png)
+![Risk Distribution](images/img4.png)
 *Animated bar chart showing risk distribution across suppliers*
 
 ### Supplier Detail Panel
-![Supplier Detail](screenshots/supplier-detail.png)
+![Supplier Detail](images/img6.png)
 *Flying slide-out panel with trust score ring and AI insights*
 
 ### How It Works Section
-![How It Works](screenshots/how-it-works.png)
+![How It Works](images/img 5.png)
 *3-step process with animated cards*
 
 ---
