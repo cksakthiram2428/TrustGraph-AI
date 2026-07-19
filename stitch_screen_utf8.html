@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>TrustGraph AI | Predictive Intelligence for Indian MSMEs</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@600;700&amp;family=Public+Sans:wght@500&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#121314",
+            "on-error": "#690005",
+            "secondary-fixed": "#dfe3e8",
+            "on-secondary-fixed": "#171c20",
+            "inverse-on-surface": "#303031",
+            "tertiary-container": "#bfab49",
+            "tertiary": "#dcc661",
+            "on-primary-fixed": "#001946",
+            "surface-bright": "#38393a",
+            "tertiary-fixed-dim": "#dcc661",
+            "secondary-fixed-dim": "#c2c7cc",
+            "secondary-container": "#42474b",
+            "surface-container-low": "#1b1c1d",
+            "on-secondary": "#2c3135",
+            "on-tertiary": "#393000",
+            "error": "#ffb4ab",
+            "surface-container-high": "#292a2b",
+            "primary-container": "#3366cc",
+            "inverse-primary": "#2259bf",
+            "surface-variant": "#343536",
+            "primary-fixed": "#d9e2ff",
+            "on-background": "#e3e2e3",
+            "outline-variant": "#434653",
+            "on-secondary-container": "#b1b6ba",
+            "on-primary-fixed-variant": "#00419d",
+            "tertiary-fixed": "#f9e37a",
+            "outline": "#8d909e",
+            "on-surface-variant": "#c3c6d5",
+            "surface-container-highest": "#343536",
+            "error-container": "#93000a",
+            "surface-tint": "#b1c5ff",
+            "surface-dim": "#121314",
+            "surface-container-lowest": "#0d0e0f",
+            "on-secondary-fixed-variant": "#42474b",
+            "primary": "#b1c5ff",
+            "primary-fixed-dim": "#b1c5ff",
+            "on-tertiary-container": "#4a3f00",
+            "on-primary-container": "#e7ebff",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#e3e2e3",
+            "surface": "#121314",
+            "inverse-surface": "#e3e2e3",
+            "surface-container": "#1f2021",
+            "secondary": "#c2c7cc",
+            "on-tertiary-fixed-variant": "#524600",
+            "on-tertiary-fixed": "#211b00",
+            "on-primary": "#002c70"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "24px",
+            "xs": "4px",
+            "lg": "24px",
+            "sm": "8px",
+            "md": "16px",
+            "gutter": "16px",
+            "xl": "32px",
+            "unit": "2px"
+          },
+          "fontFamily": {
+            "label-md": ["Public Sans"],
+            "headline-lg": ["Noto Serif"],
+            "body-md": ["Inter"],
+            "headline-md": ["Noto Serif"]
+          },
+          "fontSize": {
+            "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background-color: #09090B;
+      color: #e3e2e3;
+      scroll-behavior: smooth;
+    }
+
+    .glass-panel {
+      background: rgba(31, 32, 33, 0.4);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(141, 144, 158, 0.15);
+    }
+
+    .gradient-border {
+      position: relative;
+    }
+
+    .gradient-border::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(to right, #3366cc, transparent, #3366cc);
+      z-index: -1;
+      border-radius: inherit;
+      opacity: 0.3;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    /* Background Animations */
+    @keyframes breathing {
+
+      0%,
+      100% {
+        transform: scale(1.0);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translate(-5%, -5%) scale(1);
+      }
+
+      50% {
+        transform: translate(5%, 5%) scale(1.1);
+      }
+
+      100% {
+        transform: translate(-5%, -5%) scale(1);
+      }
+    }
+
+    .bg-atmospheric {
+      animation: breathing 20s ease-in-out infinite;
+    }
+
+    .fog-layer {
+      background: radial-gradient(circle at 50% 50%, rgba(177, 197, 255, 0.05), transparent 70%);
+      filter: blur(60px);
+      animation: drift 15s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="font-body-md text-body-md overflow-x-hidden bg-background">
+  <!-- Layered Atmospheric Background -->
+  <div class="fixed inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+    <!-- Image Base -->
+    <img alt="Futuristic Business Network"
+      class="absolute inset-0 w-full h-full object-cover bg-atmospheric opacity-40 mix-blend-screen"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX8-v9GPDARCb5iVmdKu-z__zEdnsOH0uHkk-FYL2AG8nzwrMbIv0d3rQXTrGhenrYNa2pCV-lLsJTX6CseJ8DRLbGZ8CEc5qf0kc6iNC9BSNQiek1vRHZkDQFNyi6qnh6kg98xUYzi0DyEy1JQD16YeniKLx5dTdifVsKUbTPxbYBsAjYrniRf5ETAkMcS7k2ysEzs4R3ohxlARyst5gFhgzAEuTpizKub8_4_G5f3qVXM0md6pmCefNrvYpoPFgpSuPf81HEUaJf" />
+    <!-- Radial Gradient Overlay -->
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(9,9,11,0.8)_60%,rgba(9,9,11,1)_100%)]">
+    </div>
+    <!-- Drift/Fog Layers -->
+    <div class="fog-layer absolute top-[-10%] left-[-10%] w-[120%] h-[120%]"></div>
+    <div class="fog-layer absolute bottom-[-10%] right-[-10%] w-[100%] h-[100%] opacity-50"
+      style="animation-delay: -5s;"></div>
+  </div>
+  <!-- Content Wrapper -->
+  <div class="relative z-10">
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-surface-container/80 backdrop-blur-md flex justify-between items-center px-margin py-md max-w-7xl mx-auto left-1/2 -translate-x-1/2">
+      <div class="text-headline-md font-headline-md font-bold text-primary">TrustGraph AI</div>
+      <div class="hidden md:flex items-center gap-xl">
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md"
+          href="#">Dashboard</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md"
+          href="#">Network</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-md text-label-md"
+          href="#">How It Works</a>
+      </div>
+      <button
+        class="bg-primary-container text-on-primary-container px-lg py-sm rounded-lg font-label-md text-label-md hover:brightness-110 active:scale-95 transition-all">
+        Get Started
+      </button>
+    </nav>
+    <!-- Hero Section -->
+    <main class="relative pt-32 pb-20 px-margin max-w-7xl mx-auto overflow-hidden">
+      <div class="flex flex-col items-center text-center space-y-xl">
+        <div
+          class="inline-flex items-center gap-sm px-md py-xs rounded-full bg-primary-container/10 border border-primary/20 text-primary font-label-md text-label-md">
+          <span class="material-symbols-outlined text-[18px]">verified</span>
+          New: Real-time GST integration for faster scoring
+        </div>
+        <h1 class="font-headline-lg text-6xl md:text-7xl tracking-tight max-w-4xl leading-tight">
+          Stop Guessing. <br /> <span class="text-primary">Start Trusting.</span>
+        </h1>
+        <p class="text-on-surface-variant max-w-2xl font-body-md text-lg leading-relaxed">
+          AI-powered trust scores for your entire supplier and buyer network. Know who will fail you ΓÇö before they do.
+          Empowering Indian MSMEs with predictive credit and operational intelligence.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-md w-full sm:w-auto">
+          <button
+            class="bg-primary-container text-on-primary-container px-xl py-md rounded-lg font-headline-md text-body-md font-bold shadow-lg shadow-primary-container/20 hover:shadow-primary-container/40 transition-all">
+            Get Started
+          </button>
+          <button
+            class="glass-panel text-on-surface px-xl py-md rounded-lg font-headline-md text-body-md font-medium flex items-center justify-center gap-sm hover:bg-surface-variant/50 transition-all">
+            See How It Works <span class="material-symbols-outlined">play_circle</span>
+          </button>
+        </div>
+      </div>
+    </main>
+    <!-- Stats Bar -->
+    <section class="max-w-7xl mx-auto px-margin py-xl">
+      <div class="glass-panel rounded-xl grid grid-cols-1 md:grid-cols-3 gap-xl p-xl text-center">
+        <div class="space-y-xs">
+          <div class="text-headline-lg text-primary">2,400+</div>
+          <div class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Protected MSMEs
+          </div>
+        </div>
+        <div class="space-y-xs border-y md:border-y-0 md:border-x border-outline-variant py-md md:py-0">
+          <div class="text-headline-lg text-primary">Γé╣840Cr</div>
+          <div class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Risk Prevented</div>
+        </div>
+        <div class="space-y-xs">
+          <div class="text-headline-lg text-primary">94%</div>
+          <div class="text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">Prediction Accuracy
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Live Dashboard Section -->
+    <section class="max-w-7xl mx-auto px-margin py-32">
+      <div class="flex flex-col lg:flex-row gap-xl">
+        <div class="lg:w-1/3 space-y-md">
+          <h2 class="font-headline-lg text-4xl">Supplier Trust Scores</h2>
+          <p class="text-on-surface-variant">Our engine analyzes 500+ data points including payment history, GST
+            compliance, and market sentiment to deliver a single, actionable score.</p>
+          <div class="pt-md">
+            <div
+              class="flex items-center gap-sm text-sm text-on-secondary-container bg-secondary-container/20 p-md rounded-lg border border-outline-variant">
+              <span class="material-symbols-outlined text-primary">info</span>
+              <span>Scores updated every 24 hours based on latest transaction data.</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-md">
+          <!-- Rajesh Textiles -->
+          <div
+            class="glass-panel p-lg rounded-xl flex flex-col justify-between hover:translate-y-[-4px] transition-transform">
+            <div>
+              <div class="flex justify-between items-start mb-md">
+                <span class="p-sm bg-primary/10 rounded-lg text-primary material-symbols-outlined">factory</span>
+                <span class="text-xs font-bold text-green-400 bg-green-400/10 px-sm py-1 rounded">HEALTHY</span>
+              </div>
+              <h3 class="font-headline-md text-lg mb-1">Rajesh Textiles</h3>
+              <p class="text-on-surface-variant text-sm mb-lg">Surat, Gujarat</p>
+            </div>
+            <div>
+              <div class="text-5xl font-bold text-white mb-2">91</div>
+              <div class="text-sm font-medium text-green-400">Very Low Risk</div>
+            </div>
+          </div>
+          <!-- Mehta Electronics -->
+          <div
+            class="glass-panel p-lg rounded-xl flex flex-col justify-between hover:translate-y-[-4px] transition-transform border-yellow-500/20">
+            <div>
+              <div class="flex justify-between items-start mb-md">
+                <span class="p-sm bg-primary/10 rounded-lg text-primary material-symbols-outlined">memory</span>
+                <span class="text-xs font-bold text-yellow-500 bg-yellow-500/10 px-sm py-1 rounded">WARNING</span>
+              </div>
+              <h3 class="font-headline-md text-lg mb-1">Mehta Electronics</h3>
+              <p class="text-on-surface-variant text-sm mb-lg">Bengaluru, KA</p>
+            </div>
+            <div>
+              <div class="text-5xl font-bold text-white mb-2">43</div>
+              <div class="text-sm font-medium text-yellow-500">High Risk</div>
+            </div>
+          </div>
+          <!-- Patel Pharma -->
+          <div
+            class="glass-panel p-lg rounded-xl flex flex-col justify-between hover:translate-y-[-4px] transition-transform border-error/20">
+            <div>
+              <div class="flex justify-between items-start mb-md">
+                <span
+                  class="p-sm bg-primary/10 rounded-lg text-primary material-symbols-outlined">medical_services</span>
+                <span class="text-xs font-bold text-error bg-error/10 px-sm py-1 rounded">CRITICAL</span>
+              </div>
+              <h3 class="font-headline-md text-lg mb-1">Patel Pharma</h3>
+              <p class="text-on-surface-variant text-sm mb-lg">Ahmedabad, GJ</p>
+            </div>
+            <div>
+              <div class="text-5xl font-bold text-white mb-2">29</div>
+              <div class="text-sm font-medium text-error">Critical Risk</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Network Visualization Section -->
+    <section
+      class="max-w-7xl mx-auto px-margin py-32 bg-surface-container-low/50 backdrop-blur-sm rounded-3xl relative overflow-hidden">
+      <div class="grid lg:grid-cols-2 gap-xl items-center">
+        <div class="z-10 space-y-lg order-2 lg:order-1">
+          <h2 class="font-headline-lg text-4xl">Visualize Your Entire Business Network</h2>
+          <p class="text-on-surface-variant text-lg">Don't just see your direct suppliers. TrustGraph uncovers
+            'Deep-Tier' risks. If your supplier's supplier is in trouble, you'll know it first.</p>
+          <ul class="space-y-md">
+            <li class="flex items-center gap-md">
+              <div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-sm">hub</span>
+              </div>
+              <span class="font-label-md">Multi-tier dependency mapping</span>
+            </li>
+            <li class="flex items-center gap-md">
+              <div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-sm">trending_down</span>
+              </div>
+              <span class="font-label-md">Default contagion forecasting</span>
+            </li>
+            <li class="flex items-center gap-md">
+              <div class="w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center">
+                <span class="material-symbols-outlined text-primary text-sm">notifications_active</span>
+              </div>
+              <span class="font-label-md">Proactive alternative sourcing alerts</span>
+            </li>
+          </ul>
+        </div>
+        <div class="relative h-[400px] lg:h-[500px] order-1 lg:order-2 flex items-center justify-center">
+          <div class="absolute inset-0 pointer-events-none">
+            <div
+              class="absolute top-1/4 left-1/4 w-3 h-3 bg-primary rounded-full animate-pulse shadow-[0_0_15px_rgba(177,197,255,0.8)]">
+            </div>
+            <div
+              class="absolute top-1/2 left-1/2 w-4 h-4 bg-error rounded-full animate-pulse shadow-[0_0_15px_rgba(255,180,171,0.8)]">
+            </div>
+            <div
+              class="absolute bottom-1/3 right-1/4 w-3 h-3 bg-tertiary rounded-full animate-pulse shadow-[0_0_15px_rgba(220,198,97,0.8)]">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- How It Works Section -->
+    <section class="max-w-7xl mx-auto px-margin py-32">
+      <div class="text-center mb-20">
+        <h2 class="font-headline-lg text-4xl mb-md">3 Steps to Financial Resilience</h2>
+        <div class="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-xl relative">
+        <div
+          class="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-outline-variant to-transparent -z-10">
+        </div>
+        <div class="glass-panel p-xl rounded-2xl space-y-md relative">
+          <div
+            class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold text-xl">1
+          </div>
+          <h3 class="font-headline-md text-xl">Connect Data</h3>
+          <p class="text-on-surface-variant text-sm">Securely link your ERP, Tally, or GST portal. We use bank-grade
+            encryption to ensure your data stays private and anonymous.</p>
+        </div>
+        <div class="glass-panel p-xl rounded-2xl space-y-md relative">
+          <div
+            class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold text-xl">2
+          </div>
+          <h3 class="font-headline-md text-xl">AI Trust Graph</h3>
+          <p class="text-on-surface-variant text-sm">Our neural engine maps your business entities against millions of
+            data points across the Indian MSME landscape to calculate real-time risk.</p>
+        </div>
+        <div class="glass-panel p-xl rounded-2xl space-y-md relative">
+          <div
+            class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold text-xl">3
+          </div>
+          <h3 class="font-headline-md text-xl">Predictive Alerts</h3>
+          <p class="text-on-surface-variant text-sm">Receive instant notifications on WhatsApp or Email the moment a
+            supplier's risk profile changes, allowing you to act before loss occurs.</p>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="max-w-7xl mx-auto px-margin mb-32">
+      <div class="relative glass-panel rounded-3xl p-xl md:p-32 text-center overflow-hidden">
+        <div class="relative z-10 max-w-2xl mx-auto space-y-xl">
+          <h2 class="font-headline-lg text-4xl md:text-5xl">Ready to protect your business network?</h2>
+          <p class="text-on-surface-variant text-lg">Join 2,400+ forward-thinking Indian MSMEs using TrustGraph AI to
+            de-risk their future.</p>
+          <div class="flex flex-col sm:flex-row gap-md justify-center">
+            <button
+              class="bg-primary text-on-primary px-xl py-md rounded-lg font-bold text-lg hover:scale-105 transition-transform">
+              Get Started Free
+            </button>
+            <button
+              class="border border-outline px-xl py-md rounded-lg font-bold text-lg hover:bg-surface-variant transition-colors">
+              Talk to an Expert
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="w-full bg-surface-dim border-t border-outline-variant">
+      <div class="max-w-7xl mx-auto px-margin py-xl flex flex-col md:flex-row justify-between items-center gap-md">
+        <div class="flex flex-col gap-xs items-center md:items-start">
+          <div class="text-headline-md font-headline-md font-bold text-on-surface">TrustGraph AI</div>
+          <p class="text-body-md font-body-md text-on-surface-variant text-sm">┬⌐ 2026 TrustGraph AI. Empowering Indian
+            MSMEs with Predictive Intelligence.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-lg">
+          <a class="text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors"
+            href="#">Privacy Policy</a>
+          <a class="text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors"
+            href="#">Terms of Service</a>
+          <a class="text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors"
+            href="#">Contact Support</a>
+          <a class="text-on-surface-variant font-label-md text-label-md hover:text-on-surface transition-colors"
+            href="#">MSME Resources</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    // Micro-interaction: Smooth hover for cards
+    document.querySelectorAll('.glass-panel').forEach(panel => {
+      panel.addEventListener('mouseenter', () => {
+        panel.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+      });
+    });
+
+    // Floating effect for some elements
+    const animateFloating = () => {
+      const elements = document.querySelectorAll('.animate-pulse');
+      elements.forEach((el, index) => {
+        const delay = index * 500;
+        el.style.animationDelay = `${delay}ms`;
+      });
+    };
+    animateFloating();
+  </script>
+</body>
+
+</html>

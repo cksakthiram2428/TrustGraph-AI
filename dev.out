@@ -1,0 +1,29 @@
+
+> trustgraph-ai-prototype@0.1.0 dev
+> vite
+
+Port 5173 is in use, trying another one...
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m527[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5174[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m1:01:48 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/main.jsx[22m
+[2m1:01:48 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/main.jsx[22m
+[2m1:07:20 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m1:07:20 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/App.js[22m
+[2m1:07:32 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/main.jsx[22m
+[2m1:08:14 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m1:09:03 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m1:09:22 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/NetworkPage.js[22m
+[2m1:09:22 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/DashboardPage.js[22m
+[2m1:09:22 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/HowItWorksPage.js[22m
+[2m1:09:22 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/LoginPage.js[22m
+[2m1:09:22 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/pages/HomePage.js[22m
+[2m1:09:27 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m1:12:26 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/Layout.js[22m
+[2m1:12:26 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/RequireAuth.js[22m
+[2m1:12:29 pm[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
+[2m1:12:39 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/AuthLayout.js[22m
+[2m1:12:39 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/MainLayout.js[22m
+[2m1:12:39 pm[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/components/PrivateRoute.js[22m

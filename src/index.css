@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:wght@600;700&family=Public+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #09090B;
+  color: #e3e2e3;
+  scroll-behavior: smooth;
+}
+
+/* ── Glass Panel ── */
+.glass-panel {
+  background: rgba(31, 32, 33, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(141, 144, 158, 0.25);
+}
+.glass-panel:hover {
+  border-color: rgba(177, 197, 255, 0.25);
+}
+
+/* ── Gradient Border ── */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(to right, #3366cc, transparent, #3366cc);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.3;
+}
+
+/* ── Material Icons ── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ══════════════════════════════════════════
+   Background Animations
+   ══════════════════════════════════════════ */
+@keyframes breathing {
+  0%, 100% { transform: scale(1.0); }
+  50% { transform: scale(1.05); }
+}
+@keyframes drift {
+  0% { transform: translate(-5%, -5%) scale(1); }
+  50% { transform: translate(5%, 5%) scale(1.1); }
+  100% { transform: translate(-5%, -5%) scale(1); }
+}
+.bg-atmospheric {
+  animation: breathing 20s ease-in-out infinite;
+}
+.fog-layer {
+  background: radial-gradient(circle at 50% 50%, rgba(177, 197, 255, 0.05), transparent 70%);
+  filter: blur(60px);
+  animation: drift 15s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════
+    Loading Skeleton
+    ══════════════════════════════════════════ */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, rgba(31,32,33,0.4) 25%, rgba(67,70,83,0.4) 50%, rgba(31,32,33,0.4) 75%);
+  background-size: 800px 100%;
+  animation: shimmer 0.6s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* ══════════════════════════════════════════
+    Chart Animations
+    ══════════════════════════════════════════ */
+@keyframes growHeight {
+  from { height: 5%; }
+  to { height: var(--target-height, 50%); }
+}
+
+@keyframes growWidth {
+  from { width: 0%; }
+  to { width: var(--target-width, 100%); }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { 
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% { 
+    opacity: 0.8;
+    filter: brightness(1.3);
+  }
+}
+
+@keyframes barFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* ══════════════════════════════════════════
+   Card Entrance Animation
+   ══════════════════════════════════════════ */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-slide-up {
+  animation: fadeSlideUp 0.25s ease-out forwards;
+  opacity: 0;
+}
+
+/* ══════════════════════════════════════════
+   Modal Overlay
+   ══════════════════════════════════════════ */
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.modal-overlay {
+  animation: modalFadeIn 0.25s ease-out forwards;
+}
+.modal-content {
+  animation: modalSlideUp 0.3s ease-out forwards;
+}
+
+/* ══════════════════════════════════════════
+   Score Ring
+   ══════════════════════════════════════════ */
+@keyframes scoreRingFill {
+  from { stroke-dashoffset: 283; }
+}
+.score-ring-bg {
+  fill: none;
+  stroke: rgba(67, 70, 83, 0.5);
+  stroke-width: 6;
+}
+.score-ring-fill {
+  fill: none;
+  stroke-width: 6;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  animation: scoreRingFill 0.5s ease-out forwards;
+}
+
+/* ══════════════════════════════════════════
+   Network Graph
+   ══════════════════════════════════════════ */
+@keyframes edgePulse {
+  0% { stroke-dashoffset: 20; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes nodeGlow {
+  0%, 100% { filter: drop-shadow(0 0 4px currentColor); }
+  50% { filter: drop-shadow(0 0 12px currentColor); }
+}
+.graph-edge {
+  stroke-dasharray: 8 4;
+  animation: edgePulse 1.5s linear infinite;
+}
+.graph-node {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.graph-node:hover {
+  animation: nodeGlow 1.5s ease-in-out infinite;
+}
+.graph-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  fill: #c3c6d5;
+  text-anchor: middle;
+  pointer-events: none;
+}
+.graph-tooltip {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+/* ══════════════════════════════════════════
+   Detail Panel (slide-in)
+   ══════════════════════════════════════════ */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+.detail-panel-enter {
+  animation: slideInRight 0.35s ease-out forwards;
+}
+
+/* ══════════════════════════════════════════
+   Form Input Styling
+   ══════════════════════════════════════════ */
+.form-input {
+  background: rgba(18, 19, 20, 0.8);
+  border: 1px solid rgba(67, 70, 83, 0.6);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #e3e2e3;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+.form-input:focus {
+  outline: none;
+  border-color: #3366cc;
+  box-shadow: 0 0 0 3px rgba(51, 102, 204, 0.15);
+}
+.form-input::placeholder {
+  color: rgba(195, 198, 213, 0.4);
+}
+.form-label {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #c3c6d5;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ══════════════════════════════════════════
+   Utility
+   ══════════════════════════════════════════ */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* ══════════════════════════════════════════
+   Toast Notifications
+   ══════════════════════════════════════════ */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.toast-enter {
+  animation: slideUpFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ══════════════════════════════════════════
+   Mobile Menu
+   ══════════════════════════════════════════ */
+@keyframes slideDownFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.mobile-menu-enter {
+  animation: slideDownFade 0.2s ease-out forwards;
+}
+
+/* ══════════════════════════════════════════
+   Slide-out Panel Overlay
+   ══════════════════════════════════════════ */
+@keyframes panelFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.panel-overlay-enter {
+  animation: panelFadeIn 0.3s ease-out forwards;
+}
