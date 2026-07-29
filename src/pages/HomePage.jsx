@@ -22,13 +22,6 @@ const HomePage = () => {
           >
             Get Started Free
           </Link>
-          <a 
-            href="#how-it-works"
-            className="ml-4 bg-surface-container/80 text-on-surface px-6 py-3 rounded-lg font-bold text-lg hover:bg-surface-variant/80 transition-colors flex items-center justify-center gap-2"
-          >
-            <span className="material-symbols-outlined text-lg">play_circle</span>
-            Watch Demo
-          </a>
         </div>
       </header>
 

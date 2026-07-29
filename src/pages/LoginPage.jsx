@@ -127,17 +127,6 @@ const LoginPage = () => {
         />
       </div>
       
-      {/* 3D Scroll indicator */}
-      <div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/80 text-sm backdrop-blur-md px-4 py-2 rounded-full border border-white/20"
-        style={{
-          opacity: 1 - (scrollY / 200),
-          transform: `translateX(-50%) translateY(${scrollY * 0.5}px) rotateX(${scrollY * 0.1}deg)`,
-        }}
-      >
-        <span className="material-symbols-outlined text-lg animate-bounce">mouse</span>
-        <span className="ml-2">Scroll for 3D effect</span>
-      </div>
     </div>
   );
 };

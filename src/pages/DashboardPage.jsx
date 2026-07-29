@@ -336,7 +336,7 @@ const DashboardPage = () => {
                 <div className="pt-8 space-y-4">
                   <div className="flex items-center gap-3 text-sm text-white">
                     <div className="w-4 h-4 rounded-full bg-green-400 animate-pulse"></div>
-                    <span>Healthy (Score {'>80'})</span>
+                    <span>Healthy (Score &gt;80)</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm text-white">
                     <div className="w-4 h-4 rounded-full bg-yellow-500 animate-pulse"></div>
@@ -344,14 +344,18 @@ const DashboardPage = () => {
                   </div>
                   <div className="flex items-center gap-3 text-sm text-white">
                     <div className="w-4 h-4 rounded-full bg-red-400 animate-pulse"></div>
-                    <span>Critical (Score {'<50'})</span>
+                    <span>Critical (Score &lt;50)</span>
+                  </div>
+                  <div className="mt-4 flex items-center gap-2 text-xs text-white/40 border border-white/10 rounded-lg px-3 py-2 w-fit">
+                    <span className="material-symbols-outlined text-sm text-sky-400">3d_rotation</span>
+                    <span>Drag to orbit · Scroll to zoom</span>
                   </div>
                 </div>
               </div>
               
-              <div className="relative h-[400px] lg:h-[600px] order-1 lg:order-2 flex items-center justify-center backdrop-blur-sm bg-surface-container/30 rounded-2xl p-4 border border-white/10">
+              <div className="relative h-[480px] lg:h-[600px] order-1 lg:order-2">
                 {loadingNetwork ? (
-                  <div className="w-full h-full skeleton rounded-xl" style={{ minHeight: '300px' }}></div>
+                  <div className="w-full h-full skeleton rounded-2xl" style={{ minHeight: '480px' }}></div>
                 ) : (
                   <NetworkGraph nodes={formattedNetworkData.nodes} edges={formattedNetworkData.edges} />
                 )}

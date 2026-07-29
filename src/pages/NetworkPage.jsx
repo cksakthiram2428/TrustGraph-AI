@@ -49,9 +49,9 @@ const NetworkPage = () => {
               </div>
             </div>
             
-            <div className="relative h-[400px] lg:h-[600px] order-1 lg:order-2 flex items-center justify-center backdrop-blur-sm bg-surface-container/30 rounded-2xl p-4">
+            <div className="relative h-[480px] lg:h-[600px] order-1 lg:order-2">
               {loadingNetwork ? (
-                <div className="w-full h-full skeleton rounded-xl backdrop-blur-md bg-surface-container/50"></div>
+                <div className="w-full h-full skeleton rounded-2xl" style={{ minHeight: '480px' }}></div>
               ) : (
                 <NetworkGraph nodes={networkData.nodes} edges={networkData.edges} />
               )}
