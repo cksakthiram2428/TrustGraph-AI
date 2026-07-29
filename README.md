@@ -281,15 +281,15 @@ Trust Scores are calculated from four primary KPIs:
 
 ## 🌱 Pre-Seeded Demo Data
 
-The database is seeded with five representative suppliers out of the box:
+The database is seeded with five representative suppliers from the **Electronics** and **Pharmaceuticals** industries out of the box:
 
 | Supplier | Industry | Score | Risk |
 |---|---|---|---|
-| Rajesh Textiles Pvt Ltd | Textiles & Apparel | 91 | Very Low Risk |
-| Mehta Electronics Corp | Electronics & Components | 43 | High Risk |
-| Gupta Food Processing | Food & Beverages | 78 | Low Risk |
-| Sharma Logistics Hub | Logistics & Warehousing | 61 | Medium Risk |
-| Patel Pharma Solutions | Pharmaceuticals | 29 | Critical Risk |
+| Mehta Semiconductors Ltd | Electronics & Components | 91 | Very Low Risk |
+| Verma PharmaTech Pvt Ltd | Pharmaceuticals | 43 | High Risk |
+| Rajesh MedDevices Corp | Pharmaceuticals | 78 | Low Risk |
+| Sharma Circuit Works | Electronics & Components | 61 | Medium Risk |
+| Patel BioSolutions Ltd | Pharmaceuticals | 29 | Critical Risk |
 
 ---
 

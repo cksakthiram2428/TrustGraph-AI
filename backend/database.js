@@ -55,11 +55,11 @@ const db = new sqlite3.Database(dbPath, (err) => {
       // 3. Seed Suppliers
       const insertSupplier = db.prepare(`INSERT INTO suppliers VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`);
       const suppliersData = [
-        ['A', 'Rajesh Textiles Pvt Ltd', 'Textiles & Apparel', 91, 'Very Low Risk', 'check_circle', 'emerald', 'Excellent track record. Consistently on-time delivery for 18 months.', '0 days avg', '98.5%', '99.2%', 0],
-        ['B', 'Mehta Electronics Corp', 'Electronics & Components', 43, 'High Risk', 'alert', 'red', '73% probability of delay next 30 days', '23 days avg', '62.1%', '71.8%', 14],
-        ['C', 'Gupta Food Processing', 'Food & Beverages', 78, 'Low Risk', 'check_circle', 'green', 'Reliable partner with minor seasonal delivery variance.', '3 days avg', '91.4%', '94.6%', 2],
-        ['D', 'Sharma Logistics Hub', 'Logistics & Warehousing', 61, 'Medium Risk', 'warning', 'yellow', 'Recent dip in delivery KPIs. Monitor closely.', '11 days avg', '79.3%', '85.7%', 7],
-        ['E', 'Patel Pharma Solutions', 'Pharmaceuticals', 29, 'Critical Risk', 'alert', 'error', 'Recommend immediate alternative', '38 days avg', '41.2%', '52.4%', 23]
+        ['A', 'Mehta Semiconductors Ltd', 'Electronics & Components', 91, 'Very Low Risk', 'check_circle', 'emerald', 'Excellent track record. Consistently on-time IC chip delivery for 18 months.', '0 days avg', '98.5%', '99.2%', 0],
+        ['B', 'Verma PharmaTech Pvt Ltd', 'Pharmaceuticals', 43, 'High Risk', 'alert', 'red', '73% probability of API supply delay next 30 days due to regulatory non-compliance.', '23 days avg', '62.1%', '71.8%', 14],
+        ['C', 'Rajesh MedDevices Corp', 'Pharmaceuticals', 78, 'Low Risk', 'check_circle', 'green', 'Reliable pharmaceutical partner with minor seasonal batch variance.', '3 days avg', '91.4%', '94.6%', 2],
+        ['D', 'Sharma Circuit Works', 'Electronics & Components', 61, 'Medium Risk', 'warning', 'yellow', 'Recent dip in PCB delivery KPIs. Monitor component sourcing closely.', '11 days avg', '79.3%', '85.7%', 7],
+        ['E', 'Patel BioSolutions Ltd', 'Pharmaceuticals', 29, 'Critical Risk', 'alert', 'error', 'Recommend immediate alternative supplier. GMP certification lapsed.', '38 days avg', '41.2%', '52.4%', 23]
       ];
       suppliersData.forEach(s => insertSupplier.run(s));
       insertSupplier.finalize();
@@ -78,15 +78,15 @@ const db = new sqlite3.Database(dbPath, (err) => {
       const insertNode = db.prepare(`INSERT INTO network_nodes (id, label, x, y, score, size) VALUES (?, ?, ?, ?, ?, ?)`);
       const nodesData = [
         [1, 'Your Co.', 50, 50, 95, 18],
-        [2, 'Rajesh Textiles', 20, 25, 91, 12],
-        [3, 'Mehta Elec.', 80, 20, 43, 12],
-        [4, 'Gupta Foods', 15, 70, 78, 11],
-        [5, 'Sharma Log.', 75, 65, 61, 10],
-        [6, 'Patel Pharma', 85, 45, 29, 10],
-        [7, 'Verma Steel', 35, 80, 84, 10],
-        [8, 'Kumar Auto', 60, 85, 72, 10],
-        [9, 'Singh Pack.', 30, 15, 88, 9],
-        [10, 'Das Chem.', 65, 35, 55, 9]
+        [2, 'Mehta Semicon.', 20, 25, 91, 12],
+        [3, 'Verma Pharma', 80, 20, 43, 12],
+        [4, 'Rajesh MedDev', 15, 70, 78, 11],
+        [5, 'Sharma Circuit', 75, 65, 61, 10],
+        [6, 'Patel BioSol.', 85, 45, 29, 10],
+        [7, 'Kumar Microchip', 35, 80, 84, 10],
+        [8, 'Singh Biotech', 60, 85, 72, 10],
+        [9, 'Das Nanotech', 30, 15, 88, 9],
+        [10, 'Gupta LifeSci.', 65, 35, 55, 9]
       ];
       nodesData.forEach(n => insertNode.run(n));
       insertNode.finalize();
