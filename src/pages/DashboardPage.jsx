@@ -31,7 +31,7 @@ const DashboardPage = () => {
 
   const fetchStats = () => {
     setLoadingStats(true);
-    fetch('http://localhost:3000/api/stats')
+    fetch(`${import.meta.env.VITE_API_URL}/api/stats`)
       .then(r => r.ok ? r.json() : Promise.reject(r))
       .then(data => { setStats(data); setLoadingStats(false); })
       .catch(() => setLoadingStats(false));
@@ -47,7 +47,7 @@ const DashboardPage = () => {
 
   const fetchNetwork = () => {
     setLoadingNetwork(true);
-    fetch('http://localhost:3000/api/network')
+    fetch(`${import.meta.env.VITE_API_URL}/api/network`)
       .then(r => r.ok ? r.json() : Promise.reject(r))
       .then(data => { setNetworkData(data); setLoadingNetwork(false); })
       .catch(() => setLoadingNetwork(false));
@@ -85,8 +85,8 @@ const DashboardPage = () => {
   const handleSaveSupplier = (payload) => {
     const isEditing = !!editingSupplier;
     const url = isEditing 
-      ? `http://localhost:3000/api/suppliers/${editingSupplier.id}`
-      : `http://localhost:3000/api/suppliers`;
+      ? `${import.meta.env.VITE_API_URL}/api/suppliers/${editingSupplier.id}`
+      : `${import.meta.env.VITE_API_URL}/api/suppliers`;
     const method = isEditing ? 'PUT' : 'POST';
 
     if (!isEditing) {
@@ -120,7 +120,7 @@ const DashboardPage = () => {
     e.stopPropagation();
     if (!window.confirm("Are you sure you want to delete this supplier?")) return;
     
-    fetch(`http://localhost:3000/api/suppliers/${id}`, { method: 'DELETE' })
+    fetch(`${import.meta.env.VITE_API_URL}/api/suppliers/${id}`, { method: 'DELETE' })
       .then(() => {
         fetchSuppliers();
         fetchNetwork();

@@ -3,7 +3,7 @@ const cors = require('cors');
 const db = require('./database');
  
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
  
 app.use(cors());
 app.use(express.json());
@@ -159,14 +159,19 @@ app.get('/api/supplier/report/:id', (req, res) => {
       risk: supplier.risk,
       riskIcon: supplier.riskIcon,
       riskColor: supplier.riskColor,
-      details: supplier.details,
+      details: {
+    paymentDelay: supplier.paymentDelay,
+    deliveryReliability: supplier.deliveryReliability,
+    qualityRate: supplier.qualityRate,
+    complaintCount: supplier.complaintCount
+  },
       generatedAt: new Date().toISOString()
     };
     
-    res.setHeader('Content-Disposition', 'attachment; filename=supplier_report.json'); res.setHeader('Content-Disposition', 'attachment; filename=supplier_report.json'); res.json({ report });
+    res.setHeader('Content-Disposition', 'attachment; filename=supplier_report.json'); res.json({ report });
   });
 });
  
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Backend server running at http://localhost:${port}`);
 });
